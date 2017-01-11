@@ -46,6 +46,25 @@ $config = [
             'rules' => [
             ],
         ],
+        'view' => [
+            'class' => 'yii\web\View',
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    //'cachePath' => '@runtime/Smarty/cache',
+                ],
+                'twig' => [
+                    'class' => 'yii\twig\ViewRenderer',
+                    'cachePath' => '@runtime/Twig/cache',
+                    // Array of twig options:
+                    'options' => [
+                        'auto_reload' => true,
+                    ],
+                    'globals' => ['html' => '\yii\helpers\Html'],
+                    'uses' => ['yii\bootstrap'],
+                ],              
+            ],
+        ],
     ],
     'params' => $params,
 ];
