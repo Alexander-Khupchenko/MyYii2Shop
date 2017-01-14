@@ -1,0 +1,39 @@
+.footer {
+  background-color: black;
+}
+.clearfix {
+  clear: both;
+}
+#headerMenu {
+  background-color: lightblue;
+}
+#sidebar {
+  float: left;
+  background-color: lightgray;
+}
+#content {
+  float: right;
+  background-color: lavenderblush;
+}
+#logo {
+  width: 10em;
+  height: 10em;
+  background-color: red;
+  float: left;
+  text-align: center;
+}
+#search {
+  width: 53em;
+  height: 10em;
+  background-color: yellow;
+  float: left;
+  text-align: center;
+}
+#basket {
+  width: 18em;
+  height: 10em;
+  background-color: greenyellow;
+  float: left;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
