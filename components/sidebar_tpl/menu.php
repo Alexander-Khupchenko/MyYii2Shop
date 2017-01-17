@@ -1,15 +1,11 @@
-<ul class="nav nav-stacked">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+<li>
+    <a href="<?= \yii\helpers\Url::to(['category/index', 'id' => $category['id']])?>">
+        <?=$category['name']?>
+            <?php if(isset($category['childs']) ): ?>
+                <ul>
+                <?= $this->getMenuHtml($category['childs'])?>
+                </ul>    
+            <?php endif; ?>            
+    </a>    
+</li>
 
