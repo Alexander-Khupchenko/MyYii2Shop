@@ -3,6 +3,7 @@
 use app\assets\AppAsset;
 use app\components\HeaderMenuWidget;
 use app\components\SidebarWidget;
+use app\components\LangWidget;
 
 AppAsset::register($this);
 ?>
@@ -19,6 +20,12 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
         <div class="container">
             <header class="header">
+                <?= LangWidget::widget();?>
+                <div class="viewlang">
+                    <?= Yii::t('main', 'blog')?>
+                    <?= Yii::t('main', 'joke')?>
+                    <?= Yii::t('main', 'login')?>
+                </div>
                 <div id="logo">
                     <h1>ЛОГО</h1>
                 </div>

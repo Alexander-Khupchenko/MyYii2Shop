@@ -29,4 +29,8 @@ class Category extends ActiveRecord
             'name' => 'Name',
         ];
     }
+    
+    public function getProducts(){
+        $this->hasMany(Products::className(), ['categories_id' => 'id']);
+    } 
 }

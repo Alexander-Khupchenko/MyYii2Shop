@@ -13,6 +13,7 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Ss9ePHqKcHneyjd0uAOV984Qkqzdnf9u',
             'baseUrl'=> '',
+            'class' => 'app\components\LangRequest',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -45,8 +46,10 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'class'=>'app\components\LangUrlManager',
             'rules' => [
-                '<action>' => 'site/<action>',
+                'category/<id:\d+>' => 'category/view',
+                '<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
             ],
         ],
         'view' => [
@@ -66,6 +69,19 @@ $config = [
                     'globals' => ['html' => '\yii\helpers\Html'],
                     'uses' => ['yii\bootstrap'],
                 ],              
+            ],
+        ],
+        'language'=>'ru-RU',
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@webroot/lang',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        'main' => 'main.php',
+                    ],
+                ],
             ],
         ],
     ],
