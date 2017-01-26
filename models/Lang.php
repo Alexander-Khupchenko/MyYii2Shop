@@ -25,6 +25,7 @@ class Lang extends \yii\db\ActiveRecord
     {
         if( self::$current === null ){
             self::$current = self::getDefaultLang();
+            echo self::$current;
         }
         return self::$current;
     }
